@@ -34,6 +34,11 @@ Route::put('/projects/{project}', [ProjectController::class, 'update'])->name('p
 Route::delete('/projects/{project}', [ProjectController::class, 'destroy'])->name('projects.destroy');
 
 
+Route::get('/', [ProjectController::class, 'home'])->name('home');
+Route::resource('projects', ProjectController::class)->only(['index', 'store', 'update', 'destroy']);
+
+
+
 
 
 
